@@ -1,0 +1,7 @@
+p {
+    color: green; /* 글자 색 */
+    background-color: black;
+    
+    font-size: 18pt; /* 글자 크기 및 굵기 효과 */
+    font-weight: bold; 
+}
