@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>jQuery Animate</title>
+        <style>
+            .box {
+                width: 100px; height: 100px;
+                background-color: red;
+                position: absolute;
+                left: 10px; top: 10px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="Object.js"></script>
+        <script>
+            // 웹 페이지를 모두 불러오면
+            $(document).ready(function () {
+
+                console.log('Hello World...!');
+
+                // 정보 출력
+                let resInfo = GetInfo();
+                console.log(resInfo);
+
+                // 디버깅 용 메시지박스
+                // alert('Hello World...!');
+
+                // 2번째 box 는 색상을 녹색으로 변경
+                let box_array = $(this).find('.box');                
+                let domElem = box_array.get(1);
+                if(domElem) {
+                    $(domElem).css('backgroundColor', 'green');
+                    $(domElem).css('left', '110px');
+                }
+
+                // .box 태그의 click 이벤트 연결
+                $('.box').click(function() {
+                    // object 이동 함수를 호출
+                    $(this).objectMove({
+                        weight: 100,
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="box"></div>
+        <div class="box"></div>
+    </body>
+</html>
